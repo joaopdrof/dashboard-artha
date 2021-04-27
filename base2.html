@@ -27,10 +27,14 @@
   #medico-form {
     display: none;
   }
+  .second-pass-user{
+    display: none;
+  }
   .btn-back{
     background-color: red;
     border-color: red;
   }
+
 </style>
 
 <body class="bg-gradient-primary">
@@ -70,7 +74,7 @@
               <div id="paciente-form">
                 <form class="user">
                   <h1>PACIENTE</h1>
-                  <div class="firs-pass-user">
+                  <div id="firs-pass-user">
                     <div class="form-group row">
                       <div class="col-sm-6 mb-3 mb-sm-0">
                         <input type="text" class="form-control " id="exampleFirstName"
@@ -106,16 +110,16 @@
                           placeholder="TEL">
                       </div>
                     </div>
-                    <div class="form-group row justify-content-center">
-                      <div class="col-sm-5 mb-3 mb-sm-0">
-                        <a href="" id="first-next-user" class="btn btn-primary btn-user btn-block">
-                          Próximo
-                        </a>
-                      </div>
-                    </div>
+                  </div>
+                      <div class="form-group row justify-content-center">
+                        <div class="col-sm-5 mb-3 mb-sm-0">
+                          <button href="" id="first-next-user" class="btn btn-primary btn-user btn-block">
+                            Próximo
+                          </button>
+                        </div>
                   </div>
 
-                  <div class="second-pass-user">
+                  <div id="second-pass-user">
                     <div class="form-group row">
                       <div class="col-sm-6">
                         <input type="text" class="form-control " id="exampleLastName"
@@ -274,7 +278,6 @@
                       </a>
                     </div>
                   </div>
-                </div>
 
                   <div class="third-pass-doctor">
                     <div class="form-group row">
