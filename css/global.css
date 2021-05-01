@@ -11,3 +11,14 @@
     line-height: 1.5;
     border-radius: .2rem;
 }
+
+.btn-qrcode{
+    color: #fff;
+    background-color: #7c3bc0;
+    border-color: #7c3bc0;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    font-weight: bold;
+}

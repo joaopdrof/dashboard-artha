@@ -21,6 +21,9 @@
   <link href="css/sb-admin-2.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/global.css">
 
+  <script type="text/javascript" src="js/qrcode.js"></script>
+  <!--adicionado novo-->
+
 </head>
 
 <body id="page-top">
@@ -232,28 +235,132 @@
                   <span id="telContato"></span>
                 </div>
               </div>
-            </form>
+
+
+              <div class="form-row justify-content: space-around justify-content-center">
+                <div class="form-group col-md-12">
+                  <button class="btn-qrcode">Abrir Ficha Completa</button>
+                </div>
+              </div>
+
+              <div class="ficha-completa">
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Tipo Sanguíneo</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder=" ">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Plano de Saúde</label>
+                    <input type="email" class="form-control" id="inputEmail4" placeholder=" ">
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="alergia">Alergias</label>
+                    <textarea class="form-control" id="alergia" rows="3"></textarea>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="alergia">Remédios</label>
+                    <textarea class="form-control" id="alergia" rows="3"></textarea>
+                  </div>
+                </div>
+                <h5>Doenças Auto Adquiridas</h5>
+                <div class="form-row">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="hipertenção" checked>
+                    <label class="form-check-label" for="hipertenção">
+                      Hipertenção
+                    </label>
+                  </div>
+                </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="tabagismo" checked>
+                    <label class="form-check-label" for="tabagismo">
+                      Tabagismo
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="estresse" checked>
+                    <label class="form-check-label" for="estresse">
+                      Estresse
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="sedentarismo" checked>
+                    <label class="form-check-label" for="sedentarismo">
+                      Sedentarismo
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="diabetes" checked>
+                    <label class="form-check-label" for="diabetes">
+                      Diabetes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="colesterol" checked>
+                    <label class="form-check-label" for="colesterol">
+                      Colesterol
+                    </label>
+                  </div>
+                
+
+              </div>
+              
+              <hr>
+              <!-- PARTE DO QR INICIO -->
+              <div class="form-row justify-content: space-around justify-content-center">
+                <div class="form-group col-md-4">
+                  <div>
+                    <div class="container-fluid"></div>
+
+                    <input type="text" id="valor" value="">
+                    <button onclick="createQrCode()" class="btn-qrcode">Criar QR Code</button>
+                    <div id="qrcode"></div>
+                    <!-- CODIGO PARA GERAR QR -->
+                    <script>
+                      function createQrCode() {
+                        var userInput = document.getElementById('valor').value;
+
+                        var qrcode = new QRCode("qrcode", {
+                          text: userInput,
+                          width: 256,
+                          height: 256,
+                          colorDark: 'black',
+                          colorLight: 'white',
+                          correctLevel: QRCode.CorrectLevel.H
+                        })
+                      }
+                    </script>
+
+                  </div>
+                </div>
+              </div>
           </div>
-
-
         </div>
-        <!-- /.container-fluid -->
-
+        <!-- PARTE DO QR FIM -->
+        </form>
       </div>
-      <!-- End of Main Content -->
 
-      <!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-          </div>
-        </div>
-      </footer>
-      <!-- End of Footer -->
 
     </div>
-    <!-- End of Content Wrapper -->
+    <!-- /.container-fluid -->
+
+  </div>
+  <!-- End of Main Content -->
+
+  <!-- Footer -->
+  <!-- <footer class="sticky-footer bg-white">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>Copyright &copy; Your Website 2020</span>
+      </div>
+    </div>
+  </footer> -->
+  <!-- End of Footer -->
+
+  </div>
+  <!-- End of Content Wrapper -->
 
   </div>
   <!-- End of Page Wrapper -->
