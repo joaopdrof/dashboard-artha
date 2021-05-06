@@ -60,3 +60,4 @@ $(document).ready(function () { //volta p 2
         $('.third-pass-doctor').css("display", "none");
     });
 });
+

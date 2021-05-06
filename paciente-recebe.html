@@ -239,11 +239,11 @@
 
               <div class="form-row justify-content: space-around justify-content-center">
                 <div class="form-group col-md-12">
-                  <button class="btn-qrcode">Abrir Ficha Completa</button>
+                  <button class="btn-qrcode" id="open-all">Ficha Completa</button>
                 </div>
               </div>
-
-              <div class="ficha-completa">
+              <br>
+              <div class="ficha-completa" id="complete-record" style="display: none;">
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Tipo Sanguíneo</label>
@@ -273,40 +273,40 @@
                     </label>
                   </div>
                 </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="tabagismo" checked>
-                    <label class="form-check-label" for="tabagismo">
-                      Tabagismo
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="estresse" checked>
-                    <label class="form-check-label" for="estresse">
-                      Estresse
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="sedentarismo" checked>
-                    <label class="form-check-label" for="sedentarismo">
-                      Sedentarismo
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="diabetes" checked>
-                    <label class="form-check-label" for="diabetes">
-                      Diabetes
-                    </label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="colesterol" checked>
-                    <label class="form-check-label" for="colesterol">
-                      Colesterol
-                    </label>
-                  </div>
-                
-
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="tabagismo" checked>
+                  <label class="form-check-label" for="tabagismo">
+                    Tabagismo
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="estresse" checked>
+                  <label class="form-check-label" for="estresse">
+                    Estresse
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="sedentarismo" checked>
+                  <label class="form-check-label" for="sedentarismo">
+                    Sedentarismo
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="diabetes" checked>
+                  <label class="form-check-label" for="diabetes">
+                    Diabetes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="colesterol" checked>
+                  <label class="form-check-label" for="colesterol">
+                    Colesterol
+                  </label>
+                </div>
+                <br>
               </div>
-              
+              <button class="btn-qrcode" id="close-all">Salvar Alterações</button>
+
               <hr>
               <!-- PARTE DO QR INICIO -->
               <div class="form-row justify-content: space-around justify-content-center">
@@ -391,6 +391,7 @@
   </div>
 
   <!-- Bootstrap core JavaScript-->
+
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
@@ -406,6 +407,21 @@
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+
+  <script>
+    // ficha completa
+    $("#open-all").click(function (event) {
+      event.preventDefault();
+      console.log("open-all")
+      $('#complete-record').css("display", "block");
+    });
+
+    $("#close-all").click(function (event) {
+      event.preventDefault();
+      console.log("close-all")
+      $('#complete-record').css("display", "none");
+    });
+  </script>
 
 </body>
 
